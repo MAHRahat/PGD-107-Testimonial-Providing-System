@@ -1,1 +1,4 @@
-# PGD-107-Testimonial-Providing-System
+# Testimonial Providing System
+
+PGD 107 Internet Programming Assignment
+PGDIT 20th batch, IIT, University of Dhaka
