@@ -73,12 +73,14 @@
                 switch($status) {
                     case 0:
                         echo "Update Profile";
+                        break;
                     case 1:
                         echo "Testimonial Ready";
+                        break;
                 }
                 ?>
             </button>
+            <button class="btn btn-lg btn-danger btn-block" type="button" onClick="(function() {window.location = './logout.php';})()">Log Out</button>
         </form>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
     </body>
 </html>

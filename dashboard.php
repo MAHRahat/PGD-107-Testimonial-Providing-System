@@ -51,7 +51,7 @@
                 echo '<th scope="col">Roll</th>';
                 echo '<th scope="col">Degree</th>';
                 echo '<th scope="col">Status</th>';
-                echo '<th scope="col">Date</th>';
+                //echo '<th scope="col">Date</th>';
                 echo '</tr>';
                 echo '</thead>';
                 echo '<tbody>';
@@ -63,9 +63,14 @@
                     echo '<td>' . $row['roll'] .'</td>';
                     echo '<td>' . $row['degree'] .'</td>';
                     echo '<td>' . $row['status'] .'</td>';
-                    echo '<td><input type="date" class="form-control" vertical-align="middle" value="' . $row['delivery'] .'"></td>';
+                    //echo '<td><input type="date" class="form-control" vertical-align="middle" value="' . $row['delivery'] .'"></td>';
                     echo '</tr>';
                 }
+                echo '<tr class="table-dark">';
+                echo '<td class="table-dark" colspan="6">';
+                echo '<button class="btn btn-lg btn-danger btn-block" type="button" style="width:100%; max-width:500px; bottom: 0px; margin: 0 auto;" onClick="(function() {window.location = \'./logout.php\';})()">Log Out</button>';
+                echo '</td>';
+                echo '</tr>';
                 echo '</tbody>';
                 echo '</table>';
             }
@@ -73,7 +78,7 @@
             $conn = databaseConnection();
             dataRead($conn);
         ?>
-
+        
     </body>
 </html>
 
