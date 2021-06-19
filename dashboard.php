@@ -62,7 +62,12 @@
                     echo '<td>' . $row['session'] .'</td>';
                     echo '<td>' . $row['roll'] .'</td>';
                     echo '<td>' . $row['degree'] .'</td>';
-                    echo '<td>' . $row['status'] .'</td>';
+                    if ($row['status']!=0) {
+                        echo "<td>Approved</td>";
+                    }
+                    else {
+                        echo '<td><a href="./approve.php?email=\'' . $row['email'] .'\'">Approve</a></td>';
+                    }
                     //echo '<td><input type="date" class="form-control" vertical-align="middle" value="' . $row['delivery'] .'"></td>';
                     echo '</tr>';
                 }

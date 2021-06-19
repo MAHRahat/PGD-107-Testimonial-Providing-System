@@ -51,6 +51,13 @@
         <title>Profile</title>
         <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="./assets/css/custom.css" rel="stylesheet">
+        <style>
+            .form-control, .form-control[disabled],.form-control[readonly],fieldset[disabled] {
+                background-color: #444;
+                color: #eee;
+                opacity: .6;
+            }
+        </style>
     </head>
     <body class="text-center">
         <form class="form-pgd" action="action_pro.php" method="post">
@@ -68,7 +75,7 @@
             <input type="text" id="roll" name="roll" class="form-control" placeholder="Roll" value="<?php echo $roll; ?>" required <?php if($status!=0)echo "readonly"; ?> >
             <label for="degree" class="sr-only">Degree</label>
             <input type="text" id="degree" name="degree" class="form-control" placeholder="Degree" value="<?php echo $degree; ?>" required <?php if($status!=0)echo "readonly"; ?> >
-            <button class="btn btn-lg btn-primary btn-block" <?php if($status!=0)echo "type=\"submit\""; ?> >
+            <button class="btn btn-lg btn-primary btn-block" <?php if($status==0)echo "type=\"submit\""; else echo "type=\"button\""; ?> >
                 <?php 
                 switch($status) {
                     case 0:
