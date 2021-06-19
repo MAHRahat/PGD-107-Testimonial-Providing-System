@@ -2,6 +2,15 @@
     session_start();
 ?>
 
+<!doctype html>
+<html>
+    <head>
+        <title>Profile</title>
+        <meta http-equiv="refresh" content="2; url=profile.php">
+        <link href="./assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body style="text-align:center;">
+
 <?php
     function dataReceive() {
         $name = $_POST["name"];
@@ -31,12 +40,15 @@
         $sql = "update stu set name='$name', roll='$roll', session='$sess', degree='$degree', status='0', delivery=NULL where email='$email'" ;
         $res = mysqli_query($conn, $sql);
         if ($res) {
+            echo "<div class=\"action_success\">";
             echo "Congratulations! <br>";
             echo "Record updated successfully <br>";
-            echo "<a href=\"profile.php\">Profile</a>";
+            echo "</div>";
         }
         else {
+            echo "<div class=\"action_failure\">";
             echo "Error: ". $sql . "<br>" . mysqli_error($conn);
+            echo "</div>";
         }
     }
 
@@ -44,4 +56,5 @@
     $conn = databaseConnection();
     dataUpdate($conn, $data);
 ?>
-
+</body>
+</html>

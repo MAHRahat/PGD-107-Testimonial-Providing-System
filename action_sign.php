@@ -8,6 +8,15 @@
     }
 ?>
 
+<!doctype html>
+<html>
+    <head>
+        <title>Signin</title>
+        <meta http-equiv="refresh" content="2; url=signin.php">
+        <link href="./assets/css/custom.css" rel="stylesheet">
+    </head>
+    <body style="text-align:center;">
+
 <?php
     function dataReceive() {
         $email = $_POST["email"];
@@ -22,7 +31,9 @@
         $dbname = "test";
         $conn = mysqli_connect($server, $username, $password, $dbname);
         if (!$conn) {
+            echo "<div class=\"action_failure\">";
             echo "Connection failed: " . mysqli_error();
+            echo "</div>";
             return null;
         }
         return $conn;
@@ -31,7 +42,9 @@
         $sql = "select email from stu where email = '$email' and pass = '$pass'";
         $res = mysqli_query($conn, $sql);
         if (!$res) {
+            echo "<div class=\"action_failure\">";
             echo "Error: ". $sql . "<br>" . mysqli_error($conn);
+            echo "</div>";
             return;
         }
         $count = mysqli_num_rows($res);
@@ -42,8 +55,10 @@
             header("Location:index.php");
         }
         else {
+            echo "<div class=\"action_failure\">";
             echo "Wrong email or password.<br>";
-            echo "Go to <a href=\"signin.php\">Sign In</a> page.";
+            //echo "Go to <a href=\"signin.php\">Sign In</a> page.";
+            echo "</div>";
         }
     }
 
@@ -54,7 +69,5 @@
     dataCheck($conn, $email, $pass);
 ?>
 
-
-
-
-
+    </body>
+</html>

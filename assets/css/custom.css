@@ -110,3 +110,20 @@ a, a:focus, a:hover {
     color: #fff;
     border-bottom-color: #fff;
 }
+
+.action_success {
+    background-color: forestgreen;
+}
+
+.action_failure {
+    background-color: firebrick;
+}
+
+.action_success, .action_failure {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    color: darksalmon;
+    text-align: center;
+    font-size: 30px;
+}
