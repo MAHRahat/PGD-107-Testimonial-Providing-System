@@ -18,19 +18,17 @@
         <link href="./assets/css/custom.css" rel="stylesheet">
     </head>
     <body class="text-center">
-        <form class="form-pgd" action="action_sign.php" method="post">
+        <form class="form-pgd" action="action_admin_sign.php" method="post">
             <div>
                 <a class="mb-4" href="index.php">
                     <img class="mb-4" src="./assets/img/logo.png" alt="IIT" width="144" height="72">
                 </a>
             </div>
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-danger btn-block" type="submit">Sign in</button>
-            <button class="btn btn-lg btn-primary btn-block" type="button" onClick="(function() {window.location = './register.php';})()">Register Instead</button>
+            <input type="text" id="inputEmail" name="adminemail" class="form-control" placeholder="Email address" value="admin" hidden required>
+            <label for="adminPassword" class="sr-only">Password</label>
+            <input type="password" id="adminPassword" name="adminpass" class="form-control" placeholder="Password" required autofocus>
+            <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
         </form>
     </body>
 </html>

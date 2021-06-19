@@ -5,6 +5,9 @@
         session_destroy();
         header("location:signin.php");
     }
+    elseif ($_SESSION['email']!="admin") {
+        header("location:profile.php");
+    }
 ?>
 
 <!doctype html>

@@ -5,6 +5,9 @@
         session_destroy();
         header("location:signin.php");
     }
+    elseif ($_SESSION['email']=="admin") {
+        header("location:dashboard.php");
+    }
     function databaseConnection() {
         $server = "localhost";
         $username = "root";
@@ -51,7 +54,11 @@
     </head>
     <body class="text-center">
         <form class="form-pgd" action="action_pro.php" method="post">
-            <img class="mb-4" src="./assets/img/logo.png" alt="IIT" width="144" height="72">
+            <div>
+                <a class="mb-4" href="index.php">
+                    <img class="mb-4" src="./assets/img/logo.png" alt="IIT" width="144" height="72">
+                </a>
+            </div>
             <h1 class="h3 mb-3 font-weight-normal">Student Profile</h1>
             <label for="name" class="sr-only">Name</label>
             <input type="text" id="name" name="name" class="form-control" placeholder="Name" value="<?php echo $name; ?>" required <?php if($status!=0)echo "readonly"; ?> >
@@ -61,7 +68,17 @@
             <input type="text" id="roll" name="roll" class="form-control" placeholder="Roll" value="<?php echo $roll; ?>" required <?php if($status!=0)echo "readonly"; ?> >
             <label for="degree" class="sr-only">Degree</label>
             <input type="text" id="degree" name="degree" class="form-control" placeholder="Degree" value="<?php echo $degree; ?>" required <?php if($status!=0)echo "readonly"; ?> >
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Update Profile</button>
+            <button class="btn btn-lg btn-primary btn-block" <?php if($status!=0)echo "type=\"submit\""; ?> >
+                <?php 
+                switch($status) {
+                    case 0:
+                        echo "Update Profile";
+                    case 1:
+                        echo "Testimonial Ready";
+                }
+                ?>
+            </button>
         </form>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Logout</button>
     </body>
 </html>
