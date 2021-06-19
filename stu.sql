@@ -46,8 +46,8 @@ INSERT INTO `stu` (`email`, `pass`, `name`, `session`, `roll`, `degree`, `status
 ('baki@du.ac', 'ec72fe3ed086cc8af1b493e323da557e', NULL, NULL, '2', NULL, 0, NULL),
 ('mimma@du.ac', '3cf90e68437e4b53d24e8e09b9941950', NULL, NULL, '5', NULL, 0, NULL),
 ('sakib@du.ac', '28e9ae3ae3f544edf077eae414725fa2', 'Sakib', '19-20', '8', 'PGD', 0, NULL),
-('naima@du.ac', '680907fe81ee50cca424604ce8f8b111', NULL, NULL, NULL, '27', 0, NULL),
-('ahmed@du.ac', '9193ce3b31332b03f7d8af056c692b84', NULL, NULL, NULL, '39', 0, NULL);
+('naima@du.ac', '680907fe81ee50cca424604ce8f8b111', NULL, NULL, '27', NULL, 0, NULL),
+('ahmed@du.ac', '9193ce3b31332b03f7d8af056c692b84', NULL, NULL, '39', NULL, 0, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
